@@ -21,7 +21,7 @@ aws configure set region $region --profile $adpanid
 
 # Get name of last GZ file updated
 # Source: https://stackoverflow.com/questions/38384879/downloading-the-latest-file-in-an-s3-bucket-using-aws-cli #
-# Update file format if neccessary on lines 25 and 29
+# Update file format if neccessary on lines 26 and 30
 
 feedName=$( aws s3 ls $bucket --profile $adpanid | egrep '*.gz*' | sort | tail -n 1 | awk '{print $4}' );
 feedPath="${bucket}/${feedName}";
